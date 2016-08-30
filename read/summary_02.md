@@ -19,49 +19,48 @@ Is a single-celled organism, it is a inhabitant of the sea.
 
 Brief Description
 iii1  Motivational statements
-      Forecast the weather is a challenging task. The use of data mining technologies can be a valuable instrument.
+The stepping up in sequencing DNA will reveal a lot of genetic code.
 iii2  Hypotheses
-      Given enough data, Data Mining techniques can be used for weather forecasting and climate change studies (s. paper)
+Their tool FACIL will valuate nucleic acid sequences fast and reliably.
 iii3  Checklists
-      data collection of 120months, Jan 2000 - Dec 2009
+5866 annotated DNA sequences including 3269 bacterial, 176 archael and 2421 organellar genomes.
 iii4  Related Work
-      just mentioned that there is a number of methods and refers to that paper: Elia G. P., 2009, “A Decision Tree for Weather
-Prediction”
+Gendecoder: encodes another aspect about DNA.
 iii5  Study instruments
-      They use Artifical Neuronal Networks and Decision trees.
+They use Random Forest, the randomForest R package version 2.11.0 was used
 iii6  Statistical tests
-      To say which weather forecasting mechanism is the best, they evaluate using Correlation Coefficient, Mean Squared Error, Mean-squared Error
+They use Random Forest
 iii7  Commentary
-      They do not comment on the techniques of their statistical tests
+After the prepocessing of the input DNA sequence, they do a homology-based prediction for each codon and then let the Random Forest work.
 iii8  Informative visualizations
-      They use table summaries, and some graphs
+      They use table summaries, and some figures
 iii9  Baseline results
-      the changes of the clima could be studied and with the artifical neuronal networks it is possible to predict based on the data, without any further programming. But they claim more data. 
+FACIL is a fast and reliable tool and detects alternative genetic code, especially if the examined species aren't close related to known ones.
 iii10 Sampling procedures
-      Due to the large amount of data collected between 2000 and 2009 the wanted to use it using the methods for data mining ie decision tree algorithms and artifical neuronal networks
+Randomly selecting 1000 regions of different lengths (all x10^x). Used three Random Forests, each containing 100 trees.
 iii11 Patterns
-      Data Cleaning, Data Selection, Data Transformation and Data Mining.
+The three steps are described in iii7
 iii12 Negative results
-      the mean error was about 50.8%, repectively 42.5%.
+The homology-based prediction caused a very low precision (24%) for stop codons.
 iii13 Tutorial materials
-      They explain decision tree and artifical neuronal networks and give an overview about it.
+They don't use much explanations on a basics level how there algorithm works. But it is sufficient if you are on an intermediate level.
 iii14 New results 
-      There were no really new results
+they relay only on general protein domains, no explicit or implicit phylogenetic relatedness used.
 iii15 Future work
-      They want to use more data, that means data that is collected over decades. and they promise that newer models could be used in the future to predcit the weather.
+future genetic work will "benefit from a more phylogenetically balanced selection of reference sequences, a proper model of evolution and a probabilistic phylogenetic method" they wrote.
 iii16 Data 
-      Meteorological data collected between 2000 and 2009 from the city of Ibadan,
-Nigeria. 
+5866 annotated DNA sequences including 3269 bacterial, 176 archael and 2421 organellar genomes. 
 iii17 Scripts
-      The C5 Decision Tree algorithm was selected and the Lavenberg-Marquet algorithm was used to train the networks.
+randomForest R package version 2.11.0
 iii18 Sample models
 iii19 Delivery tools 
+http://www.cmbi.ru.nl/FACIL/input/complete_training_table.txt.gz.
 
 Improve paper
-iv1 the decision is quite short, there is no real discussion
-iv2 they only refer to one paper that shoul show the related work. they are not comparing their results to other methods
-iv3 they could shorten the basic explanation on the first pages, because someone who does research on that topic already knows that basic stuff
-iv4 the decision tree could be illustrated to get a more intuitive view about the result.
+iv1 they do not clearly show their results and their negative points
+iv2 they give no information about the Globobulimina pseudospinescens regarding their design decision.
+iv3 Paper is difficult to understand if you are not used to all biology terms.
+iv4 There is no discussion why they used that randomForest R package.
 
 
 
