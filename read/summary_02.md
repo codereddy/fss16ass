@@ -16,8 +16,8 @@ Means Fast and Accurate Genetic Code Inference and Logo. It's the tool they pres
 <li>ii3 Homology-based
 Proteins that are evolutionarily related to each other have similar structures. Proteins are in addition are better conserved than amino acid structures. </li>
 <li>ii4 Globobulimina pseudospinescens
-Is a single-celled organism, it is a inhabitant of the sea.</li>
-<br>
+Is a single-celled organism, it is a inhabitant of the sea.</li></ul>
+
 <h3>Brief Description</h3>
 <ul><li>iii1  Motivational statements
 The stepping up in sequencing DNA will reveal a lot of genetic code.</li>
