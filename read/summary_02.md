@@ -18,8 +18,8 @@ Proteins that are evolutionarily related to each other have similar structures. 
 <li>ii4 Globobulimina pseudospinescens
 Is a single-celled organism, it is a inhabitant of the sea.</li>
 <br>
-h3>Brief Description</h3>
-<ul><lu>iii1  Motivational statements
+<h3>Brief Description</h3>
+<ul><li>iii1  Motivational statements
 The stepping up in sequencing DNA will reveal a lot of genetic code.</li>
 <li>iii2  Hypotheses
 Their tool FACIL will valuate nucleic acid sequences fast and reliably.</li>
