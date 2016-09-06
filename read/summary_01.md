@@ -4,7 +4,7 @@ Wouter G. Touw, Jumamurat R. Bayjanov, Lex Overmars, Lennart Backus, Jos Boekhor
 
 <h3>The four most important keywords:</h3>
 <ul><li>
-</li><li>ii1 Random Forest
+ii1 Random Forest
 Random Forest is a machine learning technique. At training time the algorithm develops a forest of decision trees. The mode of the classes is the output.
 
 </li><li>ii2 Curse Of Dimensionality
@@ -18,7 +18,7 @@ Interactions between variables can cause an effect, respectively variables can s
 </li></ul>
 <h3>Brief Description</h3>
 <ul><li>
-</li><li>iii1  Motivational statements
+iii1  Motivational statements
 In life sciences much data is collected and analyzed. The variables often interfere with each other. With Random Forest it's possible to take those interactions to account.
 </li><li>iii2  Hypotheses
 Random Forest can extract the interactions and so enable a good insight.
@@ -55,7 +55,7 @@ They have no deeper insight, which implementation they use.
 </li></ul>
 <h3>Improve paper</h3>
 <ul><li>
-</li><li>iv1 There is no detailed description of the data
+iv1 There is no detailed description of the data
 </li><li>iv2 There is no detailed description of the algorithms they use
 </li><li>iv3 They could use a visualization of their results
 </li><li>iv4 They do not compare their results with other related works.
