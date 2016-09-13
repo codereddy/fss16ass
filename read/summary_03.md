@@ -1,4 +1,4 @@
-<h1>Daniel F. Schwarz, Inke R. König ∗ and Andreas Ziegler: On safari to Random Jungle: a fast implementation of Random Forests for high-dimensional data. doi:10.1093/bioinformatics/btq257</h1>
+<h1>Daniel F. Schwarz, Inke R. König and Andreas Ziegler:<i>On safari to Random Jungle: a fast implementation of Random Forests for high-dimensional data</i>. doi:10.1093/bioinformatics/btq257</h1>
 
 Cited by
 
