@@ -3,8 +3,7 @@
 Cited by
 
 <h2>Data mining in the Life Sciences with Random Forest: a walk in the park or lost in the jungle?
-Wouter G. Touw, Jumamurat R. Bayjanov, Lex Overmars, Lennart Backus, Jos Boekhorst, Michiel Wels and Sacha A. F. T. van Hijum
- form) : 26th May 2012</h2>
+Wouter G. Touw, Jumamurat R. Bayjanov, Lex Overmars, Lennart Backus, Jos Boekhorst, Michiel Wels and Sacha A. F. T. van Hijum</h2>
 
 
 <h3>The four most important keywords:</h3>
