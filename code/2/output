@@ -18,7 +18,7 @@
 counts {'rainy': 5, 'overcast': 4, 'sunny': 5}
 most 5
 mode sunny
-n 14
+n 14 
 	
 mu 73.5714285714
 n 14
