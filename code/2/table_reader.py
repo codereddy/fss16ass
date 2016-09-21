@@ -66,7 +66,6 @@ class Main:
                 for i in range(0, 5, 1):
                     table.cols[i].add(row[i])
             n += 1
-            n+=2
             print(row)
         print("----")
         for col in table.cols:
