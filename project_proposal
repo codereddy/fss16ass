@@ -1,0 +1,10 @@
+Project Proposal:
+Compare naive Bayes classifier with a number if different classifiers in terms of performance on different data sets, 
+then look for instabilities in :
+(a) The performance of the models (or)
+(b)The structure of the learned models
+across different groupings of the data, then find out why naive bayes performs better of worse than the other models
+on that particular dataset. 
+Our work will be based on the work in the paper http://www.cc.gatech.edu/~isbell/reading/papers/bayes-opt.pdf
+The datasets will be taken from http://archive.ics.uci.edu/ml/
+Suggestions are welcome!

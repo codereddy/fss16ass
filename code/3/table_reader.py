@@ -92,3 +92,18 @@ class Main:
         print("------distances------")
 
         print (distance(table.cols,table.rows[0], table.rows[1]))
+
+def closest_furthest(self, rowx):
+		closest,furthest = None,None
+		low,high = +inf,-inf
+		for row in table.rows:
+			if row != rowx:
+				dist = table.distance(row,rowx)
+				if (dist>high):
+					high = dist
+					furthest = row
+				if (dist<low):
+					low = dist
+					closest = row
+		print 'Row - {};  Closest - {}; Furthest - {}'.format(rowx,closest,furthest)
+
