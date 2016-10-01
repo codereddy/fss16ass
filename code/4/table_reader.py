@@ -2,7 +2,7 @@
 # copyright (c) 2016 Tim Menzies http://menzies.us
 # all rights reserved, BSD 2-clause license
 from __future__ import division, print_function
-import sys, string, re, math, random, Nums, Syms
+import sys, string, re, math, random, Nums, Syms, kdtree, minibatchkmeans
 
 sys.dont_write_bytecode = True
 

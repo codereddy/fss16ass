@@ -1,4 +1,4 @@
-"""adapted from Béjar:K-means vs Mini Batch K-means: A comparison,
+"""adapted from Bejar:K-means vs Mini Batch K-means: A comparison,
 http://upcommons.upc.edu/bitstream/handle/2117/23414/R13-8.pdf
 
 Given: k, mini-batch-size b, iterations t, data set X
@@ -12,8 +12,8 @@ for i=1..t
     for x E M
         c <- d[x]
         v[c] <- v[c] + 1
-        η <- 1/(v[c])
-        c = (1-η)c + ηx
+        n <- 1/(v[c])
+        c = (1-n)c + nx
 """
 
 import table_reader
@@ -27,7 +27,7 @@ def minibatchkmeans(X):
         for b_ in range(0,b):
             M = X.__getRandomSample__()
         for x in M:
-            C = f(C,x)          //catch center
+            C = f(C,x)          #catch center
         for x in M:
             c = C[x]
             v[x] = v[x] + 1
@@ -35,4 +35,4 @@ def minibatchkmeans(X):
             c = (1-n)*c + n*x
 
 def f(C,x):
-    return x //to be corrected
+    return x #to be corrected
