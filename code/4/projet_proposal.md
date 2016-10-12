@@ -15,3 +15,11 @@ Pazzani et al give explanations to the result of their measurements. We'll try t
 
 [1]http://archive.ics.uci.edu/ml/<br>
 [2]Pazzani M. & Domingos P.On the Optimality of the Simple Bayesian Classifier under Zero-One Loss
+
+
+
+Feedback:
+Don't compare to the older learners and don't reproduce from pazzani's paper.
+Use sw datasets => http://openscience.us/repo/index.html (defect, efforts)
+Use learner from http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4527256
+Compare runtime, acc, prec
