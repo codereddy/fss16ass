@@ -3,7 +3,7 @@ After the performances are measured, instabilities will be figured out. We will 
 
 As mentioned above we take data sets from the UCI Machine Learning Repository. There you find data sets of very different kinds. We'll select 10 datasets which are all different in their kinds to have a wide spread comparison. If the learners perform uncommon in several data sets, we'll figure out what them makes different.
 
-In [1] the Bayes Classifier is compared to Gauss, C4.5, PEBLS,CN2 and Def. We will compare the Bayes Classifier to J48, ZeroR ,....??. In the paper out projects is based from, the Bayes Classifier performs better than the other classifier. We'll verify that result.
+In [2] the Bayes Classifier is compared to Gauss, C4.5, PEBLS,CN2 and Def. We will compare the Bayes Classifier to J48, ZeroR ,....??. In the paper out projects is based from, the Bayes Classifier performs better than the other classifier. We'll verify that result.
 In addition to the measurements of precision, recall and accuracy, we'll also measure the computing time each classifier was used to taken.
 After that we compare the quality results and the time results to describe the efficiency of the Naive Bayes Classifier in comparison to the others.
 
@@ -14,3 +14,4 @@ Pazzani et al give explanations to the result of their measurements. We'll try t
 
 
 [1]http://archive.ics.uci.edu/ml/
+[2]Pazzani M. & Domingos P.On the Optimality of the Simple Bayesian Classifier under Zero-One Loss
