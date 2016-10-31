@@ -46,9 +46,9 @@ def csv(file):
         yield row
 
 
-#select 500 random rows with class label not_recom & 500 with priority
+# select 500 random rows with class label not_recom & 500 with priority
 def get50500(t1, out):
-    selectedRows = []  #to avoid multiple same rows
+    selectedRows = []  # to avoid multiple same rows
     class_labels = ['not_recom', 'priority', 'spec_prior']
     label = class_labels[0]
     while (out.rows.__len__() < 500):
@@ -90,8 +90,8 @@ def get50500(t1, out):
             out.rows.append(random_row)
             selectedRows.append(randIndex)
 
-def getEras(table, section):
 
+def getEras(table, eras, section):
     selectedRows = []
 
     result = Table()
@@ -100,27 +100,40 @@ def getEras(table, section):
     if (section < 10):
         for _ in xrange(100):
             while (result.rows.__len__() < 100):
-                randIndex = random.randint(0, 1000 - 1) #of first 1000
+                randIndex = random.randint(0, 1000 - 1)  # of first 1000
                 random_row = table.rows[randIndex]
                 if (not selectedRows.__contains__(random_row)):
                     result.rows.append(random_row)
                     selectedRows.append(randIndex)
     else:
-            for _ in xrange(100):
-                while (result.rows.__len__() < 100):
-                    randIndex = random.randint(0, table.rows.__len__() - 1) #of first 1000
-                    random_row = table.rows[randIndex]
-                    if (not selectedRows.__contains__(random_row)):
-                        result.rows.append(random_row)
-                        selectedRows.append(randIndex)
-    return result
+        for _ in xrange(100):
+            while (result.rows.__len__() < 100):
+                randIndex = random.randint(0, table.rows.__len__() - 1)  # of first 1000
+                random_row = table.rows[randIndex]
+                if (not selectedRows.__contains__(random_row)):
+                    result.rows.append(random_row)
+                    selectedRows.append(randIndex)
+    # return result
+    for i in range(0, result.rows.__len__(), 1):
+        eras.rows.append(result.rows[i])
+
+
+# class variable in column 8
+def separateByClass(training):
+    separated = {}
+    for i in range(training.rows.__len__()):
+        vector = training.rows[i]
+        if vector[8] not in separated:
+            separated[vector[8]] = []
+        separated[vector[8]].append(vector)
+    return separated
 
 
 class Table:
     def __init__(self):
         self.rows = []
         self.cols = [Syms.Sym(), Syms.Sym(), Syms.Sym(), Nums.Num(), Syms.Sym(), Syms.Sym(), Syms.Sym(), Syms.Sym(),
-                     Syms.Sym()]  # summary objects, one per column
+                     Syms.Sym()]
 
 
 class Main:
@@ -128,17 +141,25 @@ class Main:
     table.__init__()
 
     if __name__ == '__main__':
+        print("reading data")
         for row in csv('nursery_m.data'):
             table.rows.append(row)
             for i in range(0, 9, 1):
                 table.cols[i].add(row[i])
-            print(row)
 
         table_out = Table()
         table_out.__init__()
 
         get50500(table, table_out)
+        print("create eras")
+        eras = Table()
+        eras.__init__()
+        era_test = Table()
+        era_test.__init__()
+        print("incremental bayes")
+        for erasCount in range(0, 18, 1):
+            getEras(table_out, eras, erasCount)
+            train = eras
+            test = getEras(table_out, era_test, erasCount + 1)
 
-        eras = []
-        for erasCount in range(0,19,1):
-            eras.append(getEras(table_out, erasCount))
+        print("done")

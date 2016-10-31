@@ -30,3 +30,18 @@ class Num:
     def show(self):
         return "mu " + str(self.mu) + "\nn " + str(self.n) + "\nm2 " + str(self.m2) + "\nup " + str(
             self.up) + "\nlo " + str(self.lo)
+
+    def norm(i, x):
+        tmp = (x - i.lo) / (i.up - i.lo + 10 ** -32)
+        if tmp > 1:
+            return 1
+        elif tmp < 0:
+            return 0
+        else:
+            return tmp
+
+    def dist(i, x, y):
+        return i.norm(x) - i.norm(y)
+
+    def furthest(i, x):
+        return i.up if x < (i.up - i.lo) / 2 else i.lo
