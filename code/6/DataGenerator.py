@@ -1,6 +1,6 @@
-#using code of older homework to read in data file
+# using code of older homework to read in data file
 from __future__ import division, print_function
-import sys, string, re, math, Syms, Nums, random
+import sys, re, random, Syms, Nums
 
 sys.dont_write_bytecode = True
 
@@ -45,13 +45,14 @@ def csv(file):
     for row in rows(file, prep=atoms):
         yield row
 
+
 #select 500 random rows with class label not_recom & 500 with priority
 def get50500(t1, out):
-    selectedRows = []   #to avoid multiple same rows
+    selectedRows = []  #to avoid multiple same rows
     class_labels = ['not_recom', 'priority', 'spec_prior']
     label = class_labels[0]
     while (out.rows.__len__() < 500):
-        randIndex = random.randint(0,t1.rows.__len__()-1)
+        randIndex = random.randint(0, t1.rows.__len__() - 1)
         random_row = t1.rows[randIndex]
         if ((random_row[8] == label) & (not selectedRows.__contains__(random_row))):
             out.rows.append(random_row)
@@ -59,7 +60,7 @@ def get50500(t1, out):
 
     label = class_labels[1]
     while (out.rows.__len__() < 1000):
-        randIndex = random.randint(0,t1.rows.__len__()-1)
+        randIndex = random.randint(0, t1.rows.__len__() - 1)
         random_row = t1.rows[randIndex]
         if ((random_row[8] == label) & (not selectedRows.__contains__(random_row))):
             out.rows.append(random_row)
@@ -67,7 +68,7 @@ def get50500(t1, out):
 
     label = class_labels[0]
     while (out.rows.__len__() < 1100):
-        randIndex = random.randint(0,t1.rows.__len__()-1)
+        randIndex = random.randint(0, t1.rows.__len__() - 1)
         random_row = t1.rows[randIndex]
         if ((random_row[8] == label) & (not selectedRows.__contains__(random_row))):
             out.rows.append(random_row)
@@ -75,7 +76,7 @@ def get50500(t1, out):
 
     label = class_labels[1]
     while (out.rows.__len__() < 1400):
-        randIndex = random.randint(0,t1.rows.__len__()-1)
+        randIndex = random.randint(0, t1.rows.__len__() - 1)
         random_row = t1.rows[randIndex]
         if ((random_row[8] == label) & (not selectedRows.__contains__(random_row))):
             out.rows.append(random_row)
@@ -83,19 +84,43 @@ def get50500(t1, out):
 
     label = class_labels[2]
     while (out.rows.__len__() < 1700):
-        randIndex = random.randint(0,t1.rows.__len__()-1)
+        randIndex = random.randint(0, t1.rows.__len__() - 1)
         random_row = t1.rows[randIndex]
         if ((random_row[8] == label) & (not selectedRows.__contains__(random_row))):
             out.rows.append(random_row)
             selectedRows.append(randIndex)
 
+def getEras(table, section):
+
+    selectedRows = []
+
+    result = Table()
+    result.__init__()
+
+    if (section < 10):
+        for _ in xrange(100):
+            while (result.rows.__len__() < 100):
+                randIndex = random.randint(0, 1000 - 1) #of first 1000
+                random_row = table.rows[randIndex]
+                if (not selectedRows.__contains__(random_row)):
+                    result.rows.append(random_row)
+                    selectedRows.append(randIndex)
+    else:
+            for _ in xrange(100):
+                while (result.rows.__len__() < 100):
+                    randIndex = random.randint(0, table.rows.__len__() - 1) #of first 1000
+                    random_row = table.rows[randIndex]
+                    if (not selectedRows.__contains__(random_row)):
+                        result.rows.append(random_row)
+                        selectedRows.append(randIndex)
+    return result
+
 
 class Table:
     def __init__(self):
         self.rows = []
-        self.cols = [Syms.Sym(),Syms.Sym(),Syms.Sym(), Nums.Num(), Syms.Sym(),Syms.Sym(),Syms.Sym(),Syms.Sym(),Syms.Sym()]  # summary objects, one per column
-
-
+        self.cols = [Syms.Sym(), Syms.Sym(), Syms.Sym(), Nums.Num(), Syms.Sym(), Syms.Sym(), Syms.Sym(), Syms.Sym(),
+                     Syms.Sym()]  # summary objects, one per column
 
 
 class Main:
@@ -111,4 +136,9 @@ class Main:
 
         table_out = Table()
         table_out.__init__()
+
         get50500(table, table_out)
+
+        eras = []
+        for erasCount in range(0,19,1):
+            eras.append(getEras(table_out, erasCount))
