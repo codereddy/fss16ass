@@ -1,3 +1,5 @@
+IMPLEMENTED A BAYES CLASSIFIER!
+
 /usr/bin/python2.7 /home/michael/fss16ass/code/2/table_reader.py
 ['outlook', '?temperature-', '<humidity', 'windy', '=play']
 ['sunny', 85, 85, 'FALSE', 0]
@@ -45,3 +47,9 @@ lo 0.0
 	
 
 Process finished with exit code 0
+
+
+QUESTIONS:
+1) NAIVE BAYES IS FASTER THAN OTHER KNNS 
+
+2) AND ALSO THE FASTEST OF THE KNNS.
