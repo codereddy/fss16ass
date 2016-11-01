@@ -6,12 +6,3 @@ Furthest row --  ['overcast', 64, 65, 'TRUE', 2]
 ['sunny', 80, 90, 'TRUE', 0]
 Closest row --  ['sunny', 75, 70, 'TRUE', 2]
 Furthest :  ['rainy', 68, 80, 'FALSE', 1]
-
-python table.py data/weather.arff 
-['sunny', 85, 85, 'FALSE', 'no']
-Closest row --  ['sunny', 72, 95, 'FALSE', 'no']
-Furthest row --  ['overcast', 64, 65, 'TRUE', 'yes']
-
-['sunny', 80, 90, 'TRUE', 'no']
-Closest row --  ['sunny', 75, 70, 'TRUE', 'yes']
-Furthest row --  ['rainy', 68, 80, 'FALSE', 'yes']
