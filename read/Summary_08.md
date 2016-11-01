@@ -1,10 +1,10 @@
 
 
 Reading 8
-<a http://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-016-0117-3 </a>
+<a> http://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-016-0117-3 </a>
 <h1>
 Predicting analysis times in randomized clinical trials with cancer immunotherapy
-<br>Tai-Tsang ChenEmail <br>  1 February 2016
+<br> Tai-Tsang ChenEmail <br>  1 February 2016
 </h1>
 
 
