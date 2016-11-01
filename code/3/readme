@@ -1,4 +1,3 @@
-/usr/bin/python2.7 /home/michael/fss16ass/code/2/table_reader.py
 ['outlook', '?temperature-', '<humidity', 'windy', '=play']
 ['sunny', 85, 85, 'FALSE', 0]
 ['sunny', 80, 90, 'TRUE', 0]
