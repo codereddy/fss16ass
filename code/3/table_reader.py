@@ -1,108 +1,84 @@
-# simple csv reader
-# copyright (c) 2016 Tim Menzies http://menzies.us
-# all rights reserved, BSD 2-clause license
-from __future__ import division, print_function
-import sys, string, re, math, Nums, Syms
 
-sys.dont_write_bytecode = True
+import sys, math
+import Num, Sym, CSVReader, ARFFReader
 
-
-def rows(file, prep=None,
-         whitespace='[\n\r\t]',
-         comments='#.*',
-         sep=","
-):
-    """
-    Walk down comma seperated values,
-    skipping bad white space and blank lines
-    """
-    doomed = re.compile('(' + whitespace + '|' + comments + ')')
-    with open(file) as fs:
-        for line in fs:
-            line = re.sub(doomed, "", line)
-            if line:
-                row = map(lambda z: z.strip(), line.split(sep))
-                if len(row) > 0:
-                    yield prep(row) if prep else row
-
-
-def csv(file):
-    """
-    Convert rows of strings to ints,floats, or strings
-    as appropriate
-    """
-
-    def atoms(lst):
-        return map(atom, lst)
-
-    def atom(x):
-        try:
-            return int(x)
-        except:
-            try:
-                return float(x)
-            except ValueError:
-                return x
-
-    for row in rows(file, prep=atoms):
-        yield row
-
-
-UNKNOWN = "?"
-
-
-def distance(i, r1, r2, f=2):
-    d, n = 0, 10 ** -32
-    for col in i.cols:
-        x, y = r1[col.pos], r2[col.pos]
-        if x is UNKNOWN and y is UNKNOWN:
-            continue
-        if x is UNKNOWN: x = col.my.furthest(y)
-        if y is UNKNOWN: y = col.my.furthest(x)
-        n += 1
-        inc = col.dist(x, y) ** f
-        d += inc
-    return (d ** (1 / f)) / (n ** (1 / f))
-
-
-class Table:
-    def __init__(self):
+class Table :
+    def __init__(self, fileName):
         self.rows = []
-        self.cols = [Syms.Sym(), Nums.Num(), Nums.Num(), Syms.Sym(), Nums.Num()]  # summary objects, one per column
+        self.cols = []
+        self.headers = []
+        filetype = fileName.split(".")[-1]
+        if filetype == "arff" :
+            self.rowsGenerator = ARFFReader.ARFFReader(fileName).read()
+        elif filetype == "csv" :
+            self.rowsGenerator = CSVReader.CSVReader(fileName).read()
+        self.generateTable()
+        
+    def generateTable(self):
+        self.headers = self.rowsGenerator.next()
+        self.rows.append(self.rowsGenerator.next())
+        index = 0
+        for val in self.rows[0] :
+            if type(val) is int or type(val) is float:
+                self.cols.append(Num.Num())
+                self.cols[index].add(val)
+            else:
+                self.cols.append(Sym.Sym())
+                self.cols[index].add(val)
+            index += 1
+        
+        for row in self.rowsGenerator :
+            self.rows.append(row)
+            index = 0
+            for val in row:
+                self.cols[index].add(val)
+                index += 1
+    
+    def showStats(self) :
+        index = 0
+        for col in self.cols :
+            print self.headers[index]
+            col.show()
+            index += 1
+            
+    def row_distance(self, row1, row2) :
+        distance = 0
+        index = 0
+        for index in xrange(len(self.cols) - 1):
+            col = self.cols[index]
+            distance += (col.dist(row1[index], row2[index]))
+        return math.sqrt(distance)
+        
+    def find_nearest(self, row) :
+        nearest = None
+        distance = 10**32
+        for r in self.rows:
+            if r != row:
+                current_distance = self.row_distance(row, r)
+                if distance >= current_distance :
+                    nearest = r
+                    distance = current_distance
+        return nearest
+    
+    def find_furthest(self, row) :
+        furthest = None
+        distance = 10**-32
+        for r in self.rows:
+            if r != row:
+                current_distance = self.row_distance(row, r)
+                #print r, current_distance
+                if distance <= current_distance:
+                    furthest = r
+                    distance = current_distance
+        return furthest
 
 
-class Main:
-    table = Table()
-    table.__init__()
-
-    if __name__ == '__main__':
-        n = 0;
-        for row in csv('weather.csv'):
-            table.rows.append(row)
-            if n > 0:  # do not consider headline
-                for i in range(0, 5, 1):
-                    table.cols[i].add(row[i])
-                n += 1
-            print(row)
-        print("----")
-        for col in table.cols:
-            print(col.show())
-            print("\t")
-
-        print("------distances------")
-
-        print (distance(table.cols,table.rows[0], table.rows[1]))
-
-def closest_furthest(self, rowx):
-		closest,furthest = None,None
-		low,high = +inf,-inf
-		for row in table.rows:
-			if row != rowx:
-				dist = table.distance(row,rowx)
-				if (dist>high):
-					high = dist
-					furthest = row
-				if (dist<low):
-					low = dist
-					closest = row
-		print 'Row - {};  Closest - {}; Furthest - {}'.format(rowx,closest,furthest)
+if __name__ == "__main__":
+    table = Table(sys.argv[1])
+    print table.rows[0]
+    print "Closest  row -- ",table.find_nearest(table.rows[0])
+    print "Furthest row -- ", table.find_furthest(table.rows[0])
+    print ""
+    print table.rows[1]
+    print "Closest row -- ",table.find_nearest(table.rows[1])
+    print "Furthest row -- ", table.find_furthest(table.rows[1])
