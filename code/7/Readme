@@ -7,7 +7,7 @@ Naive bayes classifier is used to do all predictions.
 
 Discretization helped recall scores for Iris dataset.
 But for other datasets, normal NB classifier with discretization doesnt hurt much.
-But in arc.csv dataset, discretization with NB performed not good.
+arc.csv dataset did not perform good for discretization.
 So, it performed good for some datasets but not for other. 
 
 Below are the results for Scott Knott analysis:
