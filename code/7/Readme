@@ -1,6 +1,6 @@
 The five datasets used are 1) ant-1.7 , 2) arc, 3) tomcat, 4) xalan-2.7, 5) iris.
 1 to 4 datasets are taken from teraPROMISE repository from the ck defects data. The site is http://openscience.us/repo/defect/ck/ 
-The 5th is the famous iris dataset.
+The 5th is the famous iris dataset with 2 classes
 Experiments are ran with 5 fold cross validation ie. 80% training and 20% testing for five times.
 Scott-knot analysis is done and pretty figures were generated.
 Naive bayes classifier is used to do all predictions.
