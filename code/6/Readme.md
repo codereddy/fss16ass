@@ -1,0 +1,127 @@
+Download all the files and run the hw6.py script to get the results.
+
+Results:
+
+##########--Era 1---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+Detected Anamoly!!
+
+##########---Era 2---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 3---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 4---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 5---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 6---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 7---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 8---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 9---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 10---###########
+Recall  of Class 1 is 0.98
+Recall of Class 2 is 0.98
+Recall of Class 3 is 0.0
+A12 Score is 0.5
+
+##########---Era 11---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.97
+Recall of Class 3 is 0.0
+A12 Score is 0.722222222222
+Detected Anamoly!!
+
+##########---Era 12---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.94
+Recall of Class 3 is 0.83606557377
+A12 Score is 0.5
+Detected Anamoly!!
+
+##########---Era 13---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.94
+Recall of Class 3 is 0.868852459016
+A12 Score is 0.444444444444
+
+##########---Era 14---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.90
+Recall of Class 3 is 0.885245901639
+A12 Score is 0.611111111111
+Detected Anamoly!!
+
+##########---Era 15---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.90
+Recall of Class 3 is 0.901639344262
+A12 Score is 0.444444444444
+Detected Anamoly!!
+
+##########---Era 16---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.90
+Recall of Class 3 is 0.901639344262
+A12 Score is 0.5
+
+##########---Era 17---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.90
+Recall of Class 3 is 0.901639344262
+A12 Score is 0.5
+
+##########---Era 18---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.90
+Recall of Class 3 is 0.901639344262
+A12 Score is 0.5
+
+##########---Era 19---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.90
+Recall of Class 3 is 0.901639344262
+A12 Score is 0.5
+
+##########---Era 20---###########
+Recall  of Class 1 is 0.91
+Recall of Class 2 is 0.90
+Recall of Class 3 is 0.901639344262
+A12 Score is 0.5
