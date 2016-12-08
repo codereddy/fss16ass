@@ -11,7 +11,6 @@ import warnings
 from sk import rdivDemo
 import time
 from random import shuffle
-warnings.filterwarnings("ignore")
 
 def train_test(data, folds=5, index=0):
     l = len(data)

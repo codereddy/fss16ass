@@ -1,0 +1,120 @@
+The five datasets used are 1) ant-1.7 , 2) arc, 3) tomcat, 4) xalan-2.7, 5) iris.
+1 to 4 datasets are taken from teraPROMISE repository from the ck defects data. The site is http://openscience.us/repo/defect/ck/ 
+The 5th is the famous iris dataset with 2 classes
+Experiments are ran with 5 fold cross validation ie. 80% training and 20% testing for five times.
+Scott-knot analysis is done and pretty figures were generated.
+Naive bayes classifier is used to do all predictions.
+
+
+Discretization helped recall scores for Iris dataset.
+But for other datasets, normal NB classifier with discretization doesnt hurt much.
+arc.csv dataset did not perform good for discretization.
+So, it performed good for some datasets but not for other. 
+
+Below are the results for Scott Knott analysis on five datasets:
+
+
+ant-1.7.csv ****************************************
+
+Recall
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,        width ,    0.69  ,  0.24 (     ---*      |              ), 0.54,  0.59,  0.68
+   1 ,           NB ,    0.69  ,  0.24 (     ---*      |              ), 0.54,  0.59,  0.68
+   2 ,     interval ,    0.94  ,  0.13 (               |       -*     ), 0.83,  0.84,  0.86
+
+False Alarm
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,     interval ,    0.50  ,  0.17 (    -*         |              ), 0.37,  0.40,  0.44
+   2 ,        width ,    0.79  ,  0.25 (               | ----*        ), 0.62,  0.69,  0.77
+   2 ,           NB ,    0.79  ,  0.25 (               | ----*        ), 0.62,  0.69,  0.77
+
+Runtime :
+nb is  0.0146462917328  sec
+frequency is  0.0144422054291  sec
+width is  0.0143695354462  sec
+
+arc.csv ****************************************
+
+recall for  arc.csv is 
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,           nb ,    0.20  ,  0.14 (      --*      |              ), 0.14,  0.20,  0.29
+   1 ,        width ,    0.25  ,  0.29 (      -----*   |              ), 0.14,  0.25,  0.43
+   1 ,         freq ,    0.25  ,  0.33 (-----------*   |              ), 0.00,  0.25,  0.33
+
+false alarm for  arc.csv  is 
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,        width ,    0.47  ,  0.11 (             -*|              ), 0.42,  0.47,  0.52
+   1 ,           nb ,    0.49  ,  0.11 (              -*              ), 0.44,  0.49,  0.55
+   1 ,         freq ,    0.49  ,  0.13 (             --*              ), 0.42,  0.49,  0.56
+
+Runtime :
+nb is  0.00591373443604  sec
+frequency is  0.00545139312744  sec
+width is  0.00561218261719  sec
+
+tomcat.csv ****************************************
+
+recall for  tomcat.csv is 
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,           nb ,    0.88  ,  0.03 (               |        -*    ), 0.86,  0.88,  0.90
+   1 ,        width ,    0.89  ,  0.04 (               |        --*   ), 0.86,  0.89,  0.90
+   1 ,         freq ,    0.89  ,  0.03 (               |         -*   ), 0.87,  0.89,  0.90
+
+false alarm for  tomcat.csv  is 
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,        width ,    0.74  ,  0.10 (               |--*           ), 0.69,  0.74,  0.79
+   1 ,           nb ,    0.75  ,  0.16 (             --|---*          ), 0.65,  0.75,  0.81
+   1 ,         freq ,    0.78  ,  0.17 (              -|-----*        ), 0.67,  0.78,  0.83
+
+
+Runtime :
+nb is  0.0192060470581  sec
+frequency is  0.015375328064  sec
+width is  0.0154862880707  sec
+
+xalan-2.7.csv ****************************************
+
+recall for  xalan-2.7.csv is 
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,        width ,    0.50  ,  0.35 (         ------|--*           ), 0.25,  0.50,  0.60
+   1 ,           nb ,    0.50  ,  0.35 (         ------|--*           ), 0.25,  0.50,  0.60
+   1 ,         freq ,    0.50  ,  0.47 (       --------|--*           ), 0.20,  0.50,  0.67
+
+false alarm for  xalan-2.7.csv  is 
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,        width ,    0.55  ,  0.25 (         ------|-*            ), 0.40,  0.55,  0.66
+   1 ,         freq ,    0.57  ,  0.26 (           ----|--*           ), 0.43,  0.57,  0.69
+   1 ,           nb ,    0.60  ,  0.26 (          -----|----*         ), 0.42,  0.60,  0.67
+
+Runtime :
+nb is  0.0168616771698  sec
+frequency is  0.0164086818695  sec
+width is  0.0172649383545  sec
+
+recall for  iris.csv is 
+Recall
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,        width ,    0.59  ,  0.14 (     ---*      |              ), 0.54,  0.59,  0.68
+   1 ,           NB ,    0.59  ,  0.14 (     ---*      |              ), 0.54,  0.59,  0.68
+   2 ,     interval ,    0.84  ,  0.03 (               |       -*     ), 0.83,  0.84,  0.86
+
+False Alarm
+rank ,         name ,    med   ,  iqr 
+----------------------------------------------------
+   1 ,     interval ,    0.40  ,  0.07 (    -*         |              ), 0.37,  0.40,  0.44
+   2 ,        width ,    0.69  ,  0.15 (               | ----*        ), 0.62,  0.69,  0.77
+   2 ,           NB ,    0.69  ,  0.15 (               | ----*        ), 0.62,  0.69,  0.77
+
+Runtime :
+nb is  0.00589590072632  sec
+frequency is  0.00531678199768  sec
+width is  0.00564570426941  sec
