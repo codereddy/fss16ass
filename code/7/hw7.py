@@ -75,11 +75,10 @@ def naiveBayes(train, test, train_label, test_label):
     predicted_labels = NB.predict(dtest)
     return predicted_labels
 
-datasets = ['ant-1.7.csv', 'arc.csv','tomcat.csv', 'xalan-2.7.csv']
+datasets = ['ant-1.7.csv', 'arc.csv','tomcat.csv', 'xalan-2.7.csv','iris.csv']
 class_variable = ['Iris-setosa', 1, 0, 0, 0]
 for dataset,cv in zip(datasets,class_variable):
     table = Table(dataset)
-
     table.addRow()
     recall_for_diff_algos={}
     recall_for_diff_algos['nb'] =['nb']
